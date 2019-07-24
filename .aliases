@@ -1,0 +1,35 @@
+# General
+alias path="pwd | tr -d '\n' | pbcopy"
+alias reload="exec ${SHELL} -l"
+alias zconfig="code ~/.zshrc"
+
+fps () {
+  /bin/ps aux | grep $1
+}
+
+# Git
+alias gds="git diff --staged"
+alias gfp="git fetch --all --prune"
+alias glo="git log --graph --pretty=format:'%C(green)%h%C(reset) -%C(red)%d%C(reset) %s %C(yellow)(%cd) %C(blue)%an%C(reset)' --abbrev-commit --date=format:'%d/%m/%y %Hh%M'"
+alias glrm="git pull --rebase origin master"
+
+# Cocoapods
+alias pi="pod install"
+alias pout="pod outdated --no-repo-update"
+alias pru="pod repo update"
+alias pu="pod update  --no-repo-update"
+
+# tsuru
+alias t="tsuru"
+alias tadl="tsuru app-deploy-list -a"
+alias tai="tsuru app-info -a"
+alias tal="tsuru app-log -fa"
+alias tars="tsuru app-restart -a"
+alias tas="tsuru app-shell -a"
+alias tca="tsuru cname-add -a"
+alias tcr="tsuru cname-remove -a"
+alias teg="tsuru env-get -a"
+alias tes="tsuru env-set -a"
+alias teu="tsuru env-unset -a"
+alias tnr="tsuru node-rebalance -a"
+alias tnu="tsuru node-update"

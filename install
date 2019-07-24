@@ -1,0 +1,34 @@
+#! /bin/bash
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Oh my zsh and basic shell configs
+ln -sf $BASEDIR/.zshrc ~/.zshrc
+ln -sf $BASEDIR/.aliases ~/.aliases
+ln -sf $BASEDIR/.keybindings ~/.keybindings
+
+# Git
+ln -sf $BASEDIR/.gitignore_global ~/.gitignore_global
+ln -sf $BASEDIR/.gitconfig_global ~/.gitconfig_global
+git config --global include.path ~/.gitconfig_global
+
+# Other development configs
+ln -sf $BASEDIR/.gemrc ~/.gemrc
+
+# Shhh
+touch .secrets
+ln -sf $BASEDIR/.secrets ~/.secrets
+
+# Everything else
+touch .extra
+ln -sf $BASEDIR/.extra ~/.extra
+
+
+# iTerm2 preferences setup
+ln -shf $BASEDIR/.iterm2 ~/.iterm2
+
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
