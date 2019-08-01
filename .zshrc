@@ -3,6 +3,7 @@ export LC_ALL="en_US.UTF-8"
 
 export PATH="$(getconf PATH)"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/flutter/bin:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
