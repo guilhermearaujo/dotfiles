@@ -1,7 +1,7 @@
 # General
+alias dotfiles="code $(dirname $(readlink ~/.zshrc))"
 alias path="pwd | tr -d '\n' | pbcopy"
 alias reload="exec ${SHELL} -l"
-alias zconfig="code ~/.zshrc"
 
 fps () {
   /bin/ps aux | grep $1
