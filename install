@@ -31,12 +31,33 @@ ln -sf $BASEDIR/.secrets ~/.secrets
 touch .extra
 ln -sf $BASEDIR/.extra ~/.extra
 
-
 # iTerm2 preferences setup
 ln -shf $BASEDIR/.iterm2 ~/.iterm2
 
-# Specify the preferences directory
+echo "Setting macOS defaults..."
+# Set iTerm2 preferences
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
-
-# Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Auto-hide dock
+defaults write com.apple.dock autohide -bool true
+
+# Enable 3 finger drag
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+
+# Enable tap to click on the trackpad
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# Allow Tab key to access all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Speed up key repeat and reduce delay
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Show develop menu on Safari
+defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool true
+
+echo "Finished. A system reboot is recommended at this time."
