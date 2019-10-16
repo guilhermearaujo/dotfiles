@@ -1,6 +1,14 @@
-#! /bin/bash
+#! /bin/zsh
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "Installing Hack Nerd Font..."
+brew cask install font-hack-nerd-font
+
+echo "Linking dotfiles..."
+
+# Powerlevel10k
+ln -sf $BASEDIR/.p10k ~/.p10k.zsh
 
 # Oh my zsh and basic shell configs
 ln -sf $BASEDIR/.zshrc ~/.zshrc
