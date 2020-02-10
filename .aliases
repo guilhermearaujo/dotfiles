@@ -34,3 +34,6 @@ alias teu="tsuru env-unset -a"
 alias tnr="tsuru node-rebalance -a"
 alias tnu="tsuru node-update"
 alias tus="tsuru unit-set -a"
+
+# Rails
+alias rs="rails server webrick"
