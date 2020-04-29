@@ -113,13 +113,13 @@ echo "| Installing Ruby...          |"
 echo "+-----------------------------+"
 echo
 
-RUBY_VERSION='2.6.5'
+mkdir -p "$(rbenv root)/plugins"
+git clone https://github.com/rbenv/rbenv-each.git "$(rbenv root)/plugins/rbenv-each"
+git clone https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"
+
+RUBY_VERSION='2.7.1'
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
-
-# rbenv each plugin
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/rbenv-each.git "$(rbenv root)"/plugins/rbenv-each
 
 rbenv each gem install bundler
 
@@ -129,7 +129,7 @@ echo "| Installing Python...        |"
 echo "+-----------------------------+"
 echo
 
-PYTHON_VERSION='3.7.4'
+PYTHON_VERSION='3.8.2'
 pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
@@ -139,7 +139,12 @@ echo "| Installing Node...          |"
 echo "+-----------------------------+"
 echo
 
-NODE_VERSION='12.10.0'
+mkdir -p "$(nodenv root)/plugins"
+git clone https://github.com/nodenv/nodenv-each.git "$(nodenv root)/plugins/nodenv-each"
+git clone https://github.com/nodenv/nodenv-update.git "$(nodenv root)/plugins/nodenv-update"
+git clone https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
+
+NODE_VERSION='13.12.0'
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 
