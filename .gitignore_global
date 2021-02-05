@@ -8,3 +8,4 @@
 *.swp
 *~
 \!.env.sample
+application_default_credentials.json
