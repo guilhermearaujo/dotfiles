@@ -68,15 +68,15 @@ echo "| Installing apps...          |"
 echo "+-----------------------------+"
 echo
 
-cli_tools='amazon-ecs-cli carthage gnupg heroku jq mysql@5.6 nodenv postgresql pyenv rabbitmq rbenv readline redis ruby-build speedtest-cli tsuru'
+cli_tools='amazon-ecs-cli awscli carthage direnv gnupg heroku jq mysql nodenv openssl@1.1 postgresql pyenv rabbitmq rbenv readline redis ruby-build speedtest-cli svn tsuru zlib'
 
 brew install $cli_tools
 
-apps='1password android-studio appcleaner ccleaner charles docker dropbox epic-games firefox gog-galaxy google-chat google-chrome google-drive-file-stream itau iterm2 keybase mkvtoolnix ngrok postico postman sequel-pro sketch slack spectacle steam teamviewer the-unarchiver transmission viscosity visual-studio-code vlc-nightly whatsapp wwdc zeplin'
+apps='1password adoptopenjdk8 appcleaner ccleaner charles clickup cyberduck docker dropbox firefox google-chat google-chrome google-cloud-sdk google-drive-file-stream handbrake itau iterm2 keybase mkvtoolnix ngrok postico postman sequel-pro-nightly sketch slack spectacle steam teamviewer the-unarchiver transmission virtualbox viscosity visual-studio-code vlc-nightly whatsapp zeplin'
 ql_plugins='qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen quicklook-json suspicious-package webpquicklook'
-fonts='font-hack-nerd-font font-ubuntu'
+fonts='font-hack-nerd-font font-montserrat font-ubuntu'
 
-brew cask install $apps $ql_plugins $fonts
+brew install --cask $apps $ql_plugins $fonts
 
 echo
 echo "+-----------------------------+"
@@ -117,7 +117,7 @@ mkdir -p "$(rbenv root)/plugins"
 git clone https://github.com/rbenv/rbenv-each.git "$(rbenv root)/plugins/rbenv-each"
 git clone https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"
 
-RUBY_VERSION='2.7.1'
+RUBY_VERSION='3.0.0'
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 
@@ -129,7 +129,7 @@ echo "| Installing Python...        |"
 echo "+-----------------------------+"
 echo
 
-PYTHON_VERSION='3.8.2'
+PYTHON_VERSION='3.9.1'
 pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
@@ -144,7 +144,7 @@ git clone https://github.com/nodenv/nodenv-each.git "$(nodenv root)/plugins/node
 git clone https://github.com/nodenv/nodenv-update.git "$(nodenv root)/plugins/nodenv-update"
 git clone https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
 
-NODE_VERSION='13.12.0'
+NODE_VERSION='15.8.0'
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 
