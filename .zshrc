@@ -36,6 +36,7 @@ source $HOME/.extra
 source $HOME/.keybindings
 source $HOME/.secrets
 
+eval "$(direnv hook zsh)"
 eval "$(nodenv init -)"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
