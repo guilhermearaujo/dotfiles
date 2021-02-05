@@ -24,6 +24,8 @@ export UPDATE_ZSH_DAYS=1
 
 plugins=(bundler brew git iterm2 rails)
 
+unsetopt nomatch
+
 # User configuration
 export EDITOR="nano"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
