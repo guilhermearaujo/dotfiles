@@ -60,7 +60,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew tap heroku/brew &> /dev/null
 brew tap homebrew/cask-fonts &> /dev/null
 brew tap homebrew/cask-versions &> /dev/null
-brew tap tsuru/tsuru &> /dev/null
 brew update &> /dev/null
 
 echo
@@ -69,15 +68,73 @@ echo "| Installing apps...          |"
 echo "+-----------------------------+"
 echo
 
-cli_tools='amazon-ecs-cli awscli carthage direnv gnupg heroku jq mysql nodenv openssl@1.1 postgresql pyenv rabbitmq rbenv readline redis ruby-build speedtest-cli svn tsuru zlib'
+cli_tools=(
+  direnv
+  gnupg
+  heroku
+  jq
+  nodenv
+  openssl@1.1
+  postgresql
+  pyenv
+  rbenv
+  readline
+  redis
+  ruby-build
+  speedtest-cli
+  zlib
+)
 
-brew install $cli_tools
+apps=(
+  1password
+  adoptopenjdk11
+  appcleaner
+  ccleaner
+  charles
+  cyberduck
+  docker
+  dropbox
+  firefox
+  google-chrome
+  google-cloud-sdk
+  google-drive
+  handbrake
+  itau
+  iterm2
+  keybase
+  mkvtoolnix
+  ngrok
+  postico
+  postman
+  sequel-pro-nightly
+  sketch
+  slack
+  spectacle
+  steam
+  teamviewer
+  the-unarchiver
+  transmission
+  virtualbox
+  viscosity
+  visual-studio-code
+  vlc-nightly
+  whatsapp
+)
+ql_plugins=(
+ qlcolorcode
+ qlimagesize
+ qlmarkdown
+ qlprettypatch
+ qlstephen
+ quicklook-json
+ suspicious-package
+ webpquicklook
+)
+fonts=(
+  font-hack-nerd-font
+)
 
-apps='1password adoptopenjdk8 appcleaner ccleaner charles clickup cyberduck docker dropbox firefox google-chat google-chrome google-cloud-sdk google-drive-file-stream handbrake itau iterm2 keybase mkvtoolnix ngrok postico postman sequel-pro-nightly sketch slack spectacle steam teamviewer the-unarchiver transmission virtualbox viscosity visual-studio-code vlc-nightly whatsapp zeplin'
-ql_plugins='qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen quicklook-json suspicious-package webpquicklook'
-fonts='font-hack-nerd-font font-montserrat font-ubuntu'
-
-brew install --cask $apps $ql_plugins $fonts
+brew install $cli_tools $apps $ql_plugins $fonts
 
 echo
 echo "+-----------------------------+"
