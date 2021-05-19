@@ -187,7 +187,7 @@ echo "| Installing Python...        |"
 echo "+-----------------------------+"
 echo
 
-PYTHON_VERSION='3.9.1'
+PYTHON_VERSION='3.9.4'
 pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
@@ -202,7 +202,7 @@ git clone https://github.com/nodenv/nodenv-each.git "$(nodenv root)/plugins/node
 git clone https://github.com/nodenv/nodenv-update.git "$(nodenv root)/plugins/nodenv-update"
 git clone https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
 
-NODE_VERSION='15.8.0'
+NODE_VERSION='16.1.0'
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 
