@@ -1,0 +1,11 @@
+.DS_Store
+.env*
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swo
+*.swp
+*~
+\!.env.sample
+application_default_credentials.json

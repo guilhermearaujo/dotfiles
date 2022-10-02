@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "Linking dotfiles..."
+
+# Oh my zsh and basic shell configs
+ln -sf $BASEDIR/zshrc ~/.zshrc
+ln -sf $BASEDIR/aliases ~/.aliases
+
+# Git
+ln -sf $BASEDIR/gitignore_global ~/.gitignore_global
+ln -sf $BASEDIR/gitconfig_global ~/.gitconfig_global
+git config --global include.path ~/.gitconfig_global
+
+# Shhh
+touch secrets
+ln -sf $BASEDIR/secrets ~/.secrets
+
+# Everything else
+touch extra
+ln -sf $BASEDIR/extra ~/.extra
+
+echo "Finished. A system reboot is recommended at this time."
