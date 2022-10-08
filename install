@@ -18,6 +18,7 @@ touch secrets
 ln -sf $BASEDIR/secrets ~/.secrets
 
 # Everything else
+ln -sf $BASEDIR/asdfrc ~/.asdfrc
 touch extra
 ln -sf $BASEDIR/extra ~/.extra
 ln -sf $BASEDIR/p10k.zsh ~/.p10k.zsh
