@@ -77,6 +77,14 @@ exit | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/i
 
 echo
 echo "+-----------------------------+"
+echo "| Installing powerleve10k...  |"
+echo "+-----------------------------+"
+echo
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+
+echo
+echo "+-----------------------------+"
 echo "| Cloning dotfiles...         |"
 echo "+-----------------------------+"
 echo

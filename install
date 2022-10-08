@@ -20,5 +20,6 @@ ln -sf $BASEDIR/secrets ~/.secrets
 # Everything else
 touch extra
 ln -sf $BASEDIR/extra ~/.extra
+ln -sf $BASEDIR/p10k.zsh ~/.p10k.zsh
 
 echo "Finished. A system reboot is recommended at this time."
