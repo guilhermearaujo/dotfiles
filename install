@@ -24,6 +24,8 @@ link_file secrets
 
 # asdf
 link_file asdfrc
+link_file default-npm-packages
+link_file default-python-packages
 
 # Everything else
 touch extra
