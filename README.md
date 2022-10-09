@@ -31,3 +31,6 @@ To execute the script, run:
 ```bash
 wget -O - https://raw.github.com/guilhermearaujo/dotfiles/wsl2/setup.sh | bash
 ```
+
+# Nerd Fonts
+The shell theme configurations included in this repo includes icons that require a [Nerd Font](https://www.nerdfonts.com). You can install the font you prefer, or disable the icon usage by running `p10k configure`.
