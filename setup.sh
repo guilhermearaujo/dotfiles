@@ -129,26 +129,27 @@ asdf global python latest
 
 echo
 echo "+-----------------------------+"
-echo "| Installing Docker...        |"
+echo "| Installing other tools...   |"
 echo "+-----------------------------+"
 echo
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-echo
-echo "+-----------------------------+"
-echo "| Installing ngrok...         |"
-echo "+-----------------------------+"
-echo
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc > /dev/null
 echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
+
 sudo apt update
-sudo apt install -y ngrok
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin google-cloud-cli ngrok
+
+wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+sudo mv cloud_sql_proxy /usr/local/bin
+chmod +x /usr/local/bin/cloud_sql_proxy
+
 
 echo
 echo "+-----------------------------+"
