@@ -90,7 +90,11 @@ echo "+-----------------------------+"
 echo
 
 mkdir -p $HOME/Repos &> /dev/null
-git clone https://github.com/guilhermearaujo/dotfiles.git $HOME/Repos/dotfiles --branch wsl2 &> /dev/null
+git clone git@github.com:guilhermearaujo/dotfiles.git $HOME/Repos/dotfiles --branch wsl2 &> /dev/null
+if [ $? -ne 0 ]; then
+  echo "Failed to clone dotfiles via SSH. Cloning via HTTPS instead."
+  git clone https://github.com/guilhermearaujo/dotfiles.git $HOME/Repos/dotfiles --branch wsl2 &> /dev/null
+fi
 chmod +x $HOME/Repos/dotfiles/install &> /dev/null
 $HOME/Repos/dotfiles/install
 
