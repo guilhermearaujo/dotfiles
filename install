@@ -4,23 +4,29 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Linking dotfiles..."
 
-# Oh my zsh and basic shell configs
-ln -sf $BASEDIR/zshrc ~/.zshrc
-ln -sf $BASEDIR/aliases ~/.aliases
+link_file() {
+  ln -sf $BASEDIR/$1 ~/.$1
+}
+
+# Oh my zsh, p10k and basic shell configs
+link_file zshrc
+link_file aliases
+link_file p10k.zsh
 
 # Git
-ln -sf $BASEDIR/gitignore_global ~/.gitignore_global
-ln -sf $BASEDIR/gitconfig_global ~/.gitconfig_global
+link_file gitignore_global
+link_file gitconfig_global
 git config --global include.path ~/.gitconfig_global
 
 # Shhh
 touch secrets
-ln -sf $BASEDIR/secrets ~/.secrets
+link_file secrets
+
+# asdf
+link_file asdfrc
 
 # Everything else
-ln -sf $BASEDIR/asdfrc ~/.asdfrc
 touch extra
-ln -sf $BASEDIR/extra ~/.extra
-ln -sf $BASEDIR/p10k.zsh ~/.p10k.zsh
+link_file extra
 
 echo "Finished. A system reboot is recommended at this time."
