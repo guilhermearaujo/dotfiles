@@ -16,12 +16,13 @@ After performing a fresh install, you can run this setup script.
 It will install lots of libs and tools that I use on a regular basis, such as:
 
 
-|                |                              |
-|----------------|------------------------------|
-| Development    | git, jq, direnv, common libs |
-| Languages      | asdf (Node.js, Python)       |
-| Database       | PostgreSQL, Redis            |
-| Other tools    | Docker, ngrok, speedtest-cli |
+|                |                                   |
+|----------------|-----------------------------------|
+| Development    | git, jq, direnv, common libs      |
+| Languages      | asdf (Node.js, Python)            |
+| Databases      | PostgreSQL, Redis                 |
+| Google Cloud   | google-cloud-sdk, cloud_sql_proxy |
+| Other tools    | Docker, ngrok, speedtest-cli      |
 
 
 This script will also automatically configure the dotfiles for you.
