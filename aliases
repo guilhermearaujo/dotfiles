@@ -1,0 +1,16 @@
+# General
+alias dotfiles="code $(dirname $(readlink ~/.zshrc))"
+alias path="pwd | tr -d '\n' | pbcopy"
+alias reload="exec ${SHELL} -l"
+
+fps () {
+  /bin/ps aux | grep $1
+}
+
+# Git
+alias gcdf="git clean -df"
+alias gds="git diff --staged"
+alias gfp="git fetch --all --prune"
+alias glo="git log --graph --pretty=format:'%C(green)%h%C(reset) -%C(red)%d%C(reset) %s %C(yellow)(%cd) %C(blue)%an%C(reset)' --abbrev-commit --date=format:'%d/%m/%y %Hh%M'"
+alias glrm="git pull --rebase origin main"
+alias glrr="git pull --rebase origin release"
