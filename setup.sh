@@ -165,6 +165,10 @@ sudo service docker start
 sudo service postgresql start
 sudo service redis-server start
 
+echo "Updating WSL boot command. A backup has been saved at /etc/wsl.conf.bkp"
+sudo cp /etc/wsl.conf /etc/wsl.conf.bkp
+sudo sh -c 'echo "[boot]\ncommand=\"service docker start; service postgresql start~service redis-server start\"" >> /etc/wsl.conf'
+
 echo
 echo "+-----------------------------+"
 echo "| Cleaning up...              |"
