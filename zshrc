@@ -25,6 +25,7 @@ plugins=(asdf git)
 
 # User configuration
 export EDITOR="nano"
+export WORKSPACE="$HOME/Workspace"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases

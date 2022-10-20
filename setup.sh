@@ -89,14 +89,21 @@ echo "| Cloning dotfiles...         |"
 echo "+-----------------------------+"
 echo
 
-mkdir -p $HOME/Repos &> /dev/null
-git clone git@github.com:guilhermearaujo/dotfiles.git $HOME/Repos/dotfiles --branch wsl2 &> /dev/null
+echo -n "Enter your default workspace path [\$HOME/Workspace]: "
+read workdir
+workdir=${workdir:-\$HOME/Workspace}
+eval "WORKSPACE=$workdir"
+
+mkdir -p $WORKSPACE
+git clone git@github.com:guilhermearaujo/dotfiles.git $WORKSPACE/dotfiles --branch wsl2 &> /dev/null
 if [ $? -ne 0 ]; then
   echo "Failed to clone dotfiles via SSH. Cloning via HTTPS instead."
-  git clone https://github.com/guilhermearaujo/dotfiles.git $HOME/Repos/dotfiles --branch wsl2 &> /dev/null
+  git clone https://github.com/guilhermearaujo/dotfiles.git $WORKSPACE/dotfiles --branch wsl2 &> /dev/null
 fi
-chmod +x $HOME/Repos/dotfiles/install &> /dev/null
-$HOME/Repos/dotfiles/install
+chmod +x $WORKSPACE/dotfiles/install &> /dev/null
+$WORKSPACE/dotfiles/install
+
+sed -i "s|export WORKSPACE.*|export WORKSPACE=\"$workdir\"|g" ~/Workspace/dotfiles/zshrc
 
 echo
 echo "+-----------------------------+"
