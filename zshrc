@@ -38,6 +38,9 @@ source $HOME/.extra
 source $HOME/.keybindings
 source $HOME/.secrets
 
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+compinit
+
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
