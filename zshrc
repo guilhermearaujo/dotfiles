@@ -18,7 +18,6 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
-DISABLE_UPDATE_PROMPT="true"
 HIST_STAMPS="dd.mm.yyyy"
 
 zstyle ':omz:update' frequency 1
