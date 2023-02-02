@@ -30,7 +30,7 @@ This script will also automatically configure the dotfiles for you.
 To execute the script, run:
 
 ```bash
-wget -O - https://raw.github.com/guilhermearaujo/dotfiles/wsl2/setup.sh | bash
+wget -O - https://raw.githubusercontent.com/guilhermearaujo/dotfiles/wsl2/setup.sh | bash
 ```
 
 # Nerd Fonts
