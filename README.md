@@ -27,7 +27,7 @@ This script will also automatically configure the dotfiles for you.
 To execute the script, run:
 
 ```zsh
-zsh -c "$(curl -fsSL https://raw.github.com/guilhermearaujo/dotfiles/macOS/setup.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/guilhermearaujo/dotfiles/macOS/setup.zsh)"
 ```
 
 ## Using dotfiles only
