@@ -29,6 +29,8 @@ link_file secrets
 
 # asdf
 link_file asdfrc
+link_file default-gems
+link_file default-golang-pkgs
 link_file default-npm-packages
 link_file default-python-packages
 
