@@ -11,6 +11,7 @@ export LC_ALL="en_US.UTF-8"
 export PATH="$(getconf PATH)"
 export PATH="/usr/local/bin:$PATH"
 
+export LESS="-R -x4"
 export GPG_TTY="$(tty)"
 
 # oh-my-zsh configuration
