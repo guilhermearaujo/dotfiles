@@ -24,7 +24,7 @@ HIST_STAMPS="dd.mm.yyyy"
 zstyle ':omz:update' frequency 1
 zstyle ':omz:update' mode auto
 
-plugins=(brew asdf direnv git)
+plugins=(brew asdf direnv flutter git golang)
 
 unsetopt nomatch
 setopt HIST_IGNORE_SPACE
