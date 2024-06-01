@@ -50,18 +50,28 @@ git config --global user.email "$email" &> /dev/null
 
 echo
 echo "+-----------------------------+"
-echo "| Generating SSH key...       |"
+echo "| Generating SSH keys...      |"
 echo "+-----------------------------+"
 echo
 
-ssh-keygen -a 100 -t ed25519 -C "$email" -f ~/.ssh/id_ed25519
+ssh-keygen -a 100 -t ed25519 -C "$email" -f $HOME/.ssh/id_ed25519
 
 echo
 echo "Here's the public key:"
 echo "Now is a good time to add it to your account on:"
 echo " - GitHub: https://github.com/settings/ssh/new"
 echo " - GitLab: https://gitlab.com/-/profile/keys"
-cat ~/.ssh/id_ed25519.pub
+cat $HOME/.ssh/id_ed25519.pub
+
+ssh-keygen -a 100 -t ed25519 -C "$email" -f $HOME/.ssh/signing_ed25519
+git config --global user.signingkey "$HOME/.ssh/signing_ed25519" &> /dev/null
+
+echo
+echo "Now this is the public key for signing commits:"
+echo "You can add them using the same links:"
+echo " - GitHub: https://github.com/settings/ssh/new"
+echo " - GitLab: https://gitlab.com/-/profile/keys"
+cat $HOME/.ssh/signing_ed25519.pub
 
 echo
 echo -n "Press any key to continue"
