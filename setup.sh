@@ -22,10 +22,6 @@ packages=(
   libsqlite3-dev
   libssl-dev
   lsb-release
-  postgresql
-  postgresql-client
-  postgresql-contrib
-  redis
   speedtest-cli
   zlib1g-dev
   zsh
@@ -160,19 +156,11 @@ sudo -s mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo -s gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo -s tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo -s apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo -s tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo -s tee /etc/apt/trusted.gpg.d/ngrok.asc > /dev/null
 echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo -s tee /etc/apt/sources.list.d/ngrok.list
 
 sudo -s apt update
-sudo -s apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin google-cloud-cli ngrok
-
-wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
-sudo -s mv cloud_sql_proxy /usr/local/bin
-chmod +x /usr/local/bin/cloud_sql_proxy
-
+sudo -s apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin ngrok
 
 echo
 echo "+-----------------------------+"
@@ -181,12 +169,10 @@ echo "+-----------------------------+"
 echo
 
 sudo -s service docker start
-sudo -s service postgresql start
-sudo -s service redis-server start
 
 echo "Updating WSL boot command. A backup has been saved at /etc/wsl.conf.bkp"
 sudo -s cp /etc/wsl.conf /etc/wsl.conf.bkp
-sudo -s sh -c 'echo "[boot]\ncommand=\"service docker start; service postgresql start~service redis-server start\"" >> /etc/wsl.conf'
+sudo -s sh -c 'echo "[boot]\ncommand=\"service docker start;\"" >> /etc/wsl.conf'
 
 echo
 echo "+-----------------------------+"
