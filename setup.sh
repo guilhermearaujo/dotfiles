@@ -111,7 +111,9 @@ if [ $? -ne 0 ]; then
   git clone https://github.com/guilhermearaujo/dotfiles.git $WORKSPACE/dotfiles --branch wsl2 &> /dev/null
 fi
 chmod +x $WORKSPACE/dotfiles/install &> /dev/null
+cd $WORKSPACE/dotfiles
 $WORKSPACE/dotfiles/install
+cd -
 
 sed -i "s|export WORKSPACE.*|export WORKSPACE=\"$workdir\"|g" ~/Workspace/dotfiles/zshrc
 
