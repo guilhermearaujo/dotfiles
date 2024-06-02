@@ -5,5 +5,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	trustctime = false
+[gpg]
+	format = ssh
 [pager]
 	branch = false

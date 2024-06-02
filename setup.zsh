@@ -38,14 +38,31 @@ git config --global user.email "$email" &> /dev/null
 
 echo
 echo "+-----------------------------+"
-echo "| Generating SSH key...       |"
+echo "| Generating SSH keys...      |"
 echo "+-----------------------------+"
 echo
 
-ssh-keygen -a 100 -t ed25519 -C "$email" -f ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub | pbcopy
+ssh-keygen -a 100 -t ed25519 -C "$email" -f $HOME/.ssh/id_ed25519
+cat $HOME/.ssh/id_ed25519.pub | pbcopy
 
-echo -n "Your SSH public key has been copied to your clipboard. Press any key to continue. "
+echo "Your SSH public key has been copied to your clipboard."
+echo "Now is a good time to add it to your account on:"
+echo " - GitHub: https://github.com/settings/ssh/new"
+echo " - GitLab: https://gitlab.com/-/profile/keys"
+echo
+echo -n "Press any key to continue. "
+
+ssh-keygen -a 100 -t ed25519 -C "$email" -f $HOME/.ssh/signing_ed25519
+git config --global user.signingkey "$HOME/.ssh/signing_ed25519" &> /dev/null
+cat $HOME/.ssh/signing_ed25519.pub | pbcopy
+
+echo
+echo "Now this is the public key for signing commits. It has been copied to the clipboard as well."
+echo "You can add them using the same links:"
+echo " - GitHub: https://github.com/settings/ssh/new"
+echo " - GitLab: https://gitlab.com/-/profile/keys"
+echo
+echo -n "Press any key to continue. "
 read key
 
 echo
