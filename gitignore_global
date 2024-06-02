@@ -11,3 +11,9 @@
 application_default_credentials.json
 .testmondata
 .tool-versions
+
+go.work
+go.work.sum
+coverage.out
+
+__debug_bin*

@@ -16,7 +16,6 @@ It will install lots of tools and applications that I use on a regular basis, su
 | Development    | git, jq, direnv, common libs, VS Code |
 | Languages      | asdf (Node.js, Python)                |
 | Databases      | PostgreSQL, Redis, Postico            |
-| Google Cloud   | google-cloud-sdk, cloud_sql_proxy     |
 | Other tools    | Docker, ngrok, speedtest-cli          |
 
 **Quicklook plugins:** several plugins that help you preview source code and media files using QuickLook.  

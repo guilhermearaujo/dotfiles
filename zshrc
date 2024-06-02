@@ -10,6 +10,11 @@ export LC_ALL="en_US.UTF-8"
 
 export PATH="$(getconf PATH)"
 export PATH="/usr/local/bin:$PATH"
+# export PATH="$HOME/Library/Android/sdk:$PATH"
+export PATH="/opt/homebrew/share/android-commandlinetools/build-tools/33.0.2:$PATH"
+export PATH="/opt/homebrew/share/android-commandlinetools/emulator:$PATH"
+export PATH="/opt/homebrew/share/android-commandlinetools/platform-tools:$PATH"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export LESS="-R -x4"
 export GPG_TTY="$(tty)"
@@ -49,5 +54,10 @@ export GRPC_PYTHON_BUILD_SYSTEM_ZLIB="true"
 export CFLAGS="-I$(brew --prefix openssl@3)/include"
 export LDFLAGS="-L$(brew --prefix openssl@3)/lib"
 
+export FLUTTER_ROOT="$(asdf where flutter)"
+export ASDF_GOLANG_MOD_VERSION_ENABLED="false"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
