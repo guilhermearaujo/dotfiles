@@ -152,15 +152,16 @@ echo "| Installing other tools...   |"
 echo "+-----------------------------+"
 echo
 
-sudo -s mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo -s gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo -s tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo -s install -m 0755 -d /etc/apt/keyrings
+sudo -s curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo -s chmod a+r /etc/apt/keyrings/docker.asc
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo -s tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo -s tee /etc/apt/trusted.gpg.d/ngrok.asc > /dev/null
 echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo -s tee /etc/apt/sources.list.d/ngrok.list
 
 sudo -s apt update
-sudo -s apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin ngrok
+sudo -s apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin ngrok
 
 echo
 echo "+-----------------------------+"
