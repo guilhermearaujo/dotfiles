@@ -21,7 +21,6 @@ It will install lots of libs and tools that I use on a regular basis, such as:
 | Development    | git, jq, direnv, common libs      |
 | Languages      | asdf (Node.js, Python)            |
 | Databases      | PostgreSQL, Redis                 |
-| Google Cloud   | google-cloud-sdk, cloud_sql_proxy |
 | Other tools    | Docker, ngrok, speedtest-cli      |
 
 
