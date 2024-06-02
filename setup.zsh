@@ -104,7 +104,6 @@ apps=(
   docker
   firefox
   google-chrome
-  google-cloud-sdk
   google-drive
   iterm2
   ngrok
@@ -132,21 +131,10 @@ quicklook_plugins=(
 )
 fonts=(
   font-caskaydia-cove-nerd-font
-  font-hack-nerd-font
 )
 
 brew install $cli_tools $quicklook_plugins $fonts
 brew install --cask $apps
-
-if [[ $(uname -m) == 'arm64' ]]; then
-  curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.arm64
-else
-  curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
-fi
-
-sudo mkdir -p /usr/local/bin
-sudo mv cloud_sql_proxy /usr/local/bin
-chmod +x /usr/local/bin/cloud_sql_proxy
 
 echo
 echo "+-----------------------------+"
