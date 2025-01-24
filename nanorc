@@ -1,2 +1,3 @@
 include /opt/homebrew/opt/nanorc/share/nanorc/*.nanorc
 set tabsize 4
+set linenumbers
