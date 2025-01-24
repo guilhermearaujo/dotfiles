@@ -1341,10 +1341,12 @@
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       'prd'     PRD
       'dev'     DEV
+      'cicd'    CICD
       '*'       DEFAULT)
   typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=208
   typeset -g POWERLEVEL9K_AWS_PRD_FOREGROUND=160
   typeset -g POWERLEVEL9K_AWS_DEV_FOREGROUND=055
+  typeset -g POWERLEVEL9K_AWS_CICD_FOREGROUND=033
   # typeset -g POWERLEVEL9K_AWS_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # AWS segment format. The following parameters are available within the expansion.
