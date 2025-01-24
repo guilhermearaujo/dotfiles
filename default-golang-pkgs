@@ -1,6 +1,8 @@
 github.com/go-delve/delve/cmd/dlv
 github.com/ramya-rao-a/go-outline
 github.com/stamblerre/gocode
+golang.org/x/tools/cmd/deadcode
 golang.org/x/tools/cmd/goimports
 golang.org/x/tools/gopls
+gotest.tools/gotestsum
 honnef.co/go/tools/cmd/staticcheck
