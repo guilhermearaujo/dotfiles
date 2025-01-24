@@ -14,3 +14,5 @@ alias gfp="git fetch --all --prune"
 alias glo="git log --graph --pretty=format:'%C(green)%h%C(reset) -%C(red)%d%C(reset) %s %C(yellow)(%cd) %C(blue)%an%C(reset)' --abbrev-commit --date=format:'%d/%m/%y %Hh%M'"
 alias glrm="git pull --rebase origin main || git pull --rebase origin master"
 alias glrr="git pull --rebase origin release"
+
+alias c="cursor"
