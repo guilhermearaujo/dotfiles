@@ -8,6 +8,8 @@ fi
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+export ASDF_DATA_DIR="$HOME/.asdf"
+
 export PATH="$(getconf PATH)"
 export PATH="/usr/local/bin:$PATH"
 # export PATH="$HOME/Library/Android/sdk:$PATH"
@@ -16,6 +18,7 @@ export PATH="/opt/homebrew/share/android-commandlinetools/emulator:$PATH"
 export PATH="/opt/homebrew/share/android-commandlinetools/platform-tools:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 export LESS="-R -x4"
 export GPG_TTY="$(tty)"
