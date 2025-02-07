@@ -15,6 +15,7 @@ export PATH="/opt/homebrew/share/android-commandlinetools/build-tools/33.0.2:$PA
 export PATH="/opt/homebrew/share/android-commandlinetools/emulator:$PATH"
 export PATH="/opt/homebrew/share/android-commandlinetools/platform-tools:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 export LESS="-R -x4"
 export GPG_TTY="$(tty)"
