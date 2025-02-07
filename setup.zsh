@@ -121,7 +121,6 @@ apps=(
 
 quicklook_plugins=(
   qlcolorcode
-  qlimagesize
   qlmarkdown
   qlprettypatch
   qlstephen
