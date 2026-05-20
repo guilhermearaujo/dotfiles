@@ -18,7 +18,6 @@ export PATH="/opt/homebrew/share/android-commandlinetools/emulator:$PATH"
 export PATH="/opt/homebrew/share/android-commandlinetools/platform-tools:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 export LESS="-R -x4"
 export GPG_TTY="$(tty)"
@@ -33,7 +32,7 @@ HIST_STAMPS="dd.mm.yyyy"
 zstyle ':omz:update' frequency 1
 zstyle ':omz:update' mode auto
 
-plugins=(brew asdf direnv flutter git golang)
+plugins=(brew asdf direnv docker flutter git golang)
 
 unsetopt nomatch
 setopt HIST_IGNORE_SPACE
@@ -46,12 +45,10 @@ source $HOME/.aliases
 source $HOME/.extra
 source $HOME/.keybindings
 source $HOME/.secrets
+source $HOME/.asdf/plugins/java/set-java-home.zsh
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 compinit
-
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL="true"
 export GRPC_PYTHON_BUILD_SYSTEM_ZLIB="true"
