@@ -5,9 +5,15 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	trustctime = false
-[gpg]
-	format = ssh
-[pager]
-	branch = false
 [diff]
 	wsErrorHighlight = all
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[init]
+	defaultBranch = main
+[pager]
+	branch = false
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO9NvOe/PKtoDdXaxg8rYxHynYcJiSRJUm0jgoImVHwk
