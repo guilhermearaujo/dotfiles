@@ -88,6 +88,7 @@ cli_tools=(
   direnv
   gnupg
   jq
+  libyaml
   nano
   nanorc
   openssl@3
@@ -189,6 +190,16 @@ echo
 asdf plugin-add golang
 asdf install golang latest
 asdf set -u golang latest
+
+echo
+echo "+-----------------------------+"
+echo "| Installing Ruby...          |"
+echo "+-----------------------------+"
+echo
+
+asdf plugin-add ruby
+asdf install ruby 3.2.2
+asdf set -u ruby 3.2.2
 
 echo
 echo "+-----------------------------+"
