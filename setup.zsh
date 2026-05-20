@@ -74,8 +74,6 @@ echo
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew tap homebrew/cask-fonts &> /dev/null
-brew tap homebrew/cask-versions &> /dev/null
 brew update &> /dev/null
 
 echo
@@ -86,14 +84,13 @@ echo
 
 cli_tools=(
   asdf
+  awscli
   direnv
   gnupg
   jq
   nano
   nanorc
   openssl@3
-  postgresql@14
-  redis
   speedtest-cli
   zlib
 )
@@ -101,39 +98,25 @@ cli_tools=(
 apps=(
   1password
   appcleaner
-  docker
-  firefox
+  docker-desktop
   google-chrome
-  google-drive
   iterm2
   ngrok
-  postico
   postman
   rectangle
   slack
   the-unarchiver
   transmission
-  viscosity
   visual-studio-code
   vlc-nightly
   whatsapp
 )
 
-quicklook_plugins=(
-  qlcolorcode
-  qlmarkdown
-  qlprettypatch
-  qlstephen
-  quicklook-json
-  suspicious-package
-  webpquicklook
-)
 fonts=(
   font-caskaydia-cove-nerd-font
 )
 
-brew install $cli_tools $quicklook_plugins $fonts
-brew install --cask $apps
+brew install $cli_tools $apps $fonts
 
 echo
 echo "+-----------------------------+"
@@ -185,7 +168,7 @@ echo
 
 asdf plugin-add nodejs
 asdf install nodejs latest
-asdf global nodejs latest
+asdf set -u nodejs latest
 
 echo
 echo "+-----------------------------+"
@@ -195,7 +178,37 @@ echo
 
 asdf plugin-add python
 asdf install python latest
-asdf global python latest
+asdf set -u python latest
+
+echo
+echo "+-----------------------------+"
+echo "| Installing Go...            |"
+echo "+-----------------------------+"
+echo
+
+asdf plugin-add golang
+asdf install golang latest
+asdf set -u golang latest
+
+echo
+echo "+-----------------------------+"
+echo "| Installing Java...          |"
+echo "+-----------------------------+"
+echo
+
+asdf plugin-add java
+asdf install java temurin-17.0.19+10
+asdf set -u java temurin-17.0.19+10
+
+echo
+echo "+-----------------------------+"
+echo "| Installing uv...            |"
+echo "+-----------------------------+"
+echo
+
+asdf plugin-add uv
+asdf install uv latest
+asdf set -u uv latest
 
 echo
 echo "+-----------------------------+"
@@ -208,9 +221,3 @@ brew cleanup &> /dev/null
 # Reload QuickLook plugins
 qlmanage -r
 qlmanage -r cache
-
-# Restarting services
-brew services restart postgresql@14
-brew services restart redis
-
-createuser -s postgres
